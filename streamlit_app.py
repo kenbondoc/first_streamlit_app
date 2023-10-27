@@ -18,9 +18,11 @@ slit.dataframe(fruits_to_show)
 
 # New section to display fruityvice api response
 slit.header('Fruityvice Fruit Advice!')
-import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+import requests as rqst
+fruityvice_response = rqst.get("https://fruityvice.com/api/fruit/watermelon")
+fruityvice_response2 = rqst.get("https://fruityvice.com/api/fruit/apple")
 slit.text(fruityvice_response.json())
+slit.tetx(fruityvice_response2.json())
 
 
 
