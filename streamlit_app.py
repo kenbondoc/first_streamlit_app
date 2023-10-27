@@ -19,7 +19,7 @@ slit.dataframe(fruits_to_show)
 # New section to display fruityvice api response
 slit.header('Fruityvice Fruit Advice!')
 import requests as rqst
-fruityvice_response = rqst.get("https://fruityvice.com/api/fruit/watermelon")
+fruityvice_response = rqst.get("https://fruityvice.com/api/fruit/" + "kiwi")
 fruityvice_normalized = pnda.json_normalize(fruityvice_response.json())
 slit.dataframe(fruityvice_normalized)
 
