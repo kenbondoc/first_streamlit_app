@@ -1,5 +1,5 @@
 import streamlit as slit
-slit.title('My Parent's New Healthy Diner')
+slit.title('My Parents New Healthy Diner')
 slit.header('BreakFast Menu')
 slit.text('🥣 Omega 3 & Blueberry Oatmeal')
 slit.text('🥗 Kale, Spinach & Rocket Smoothie')
@@ -12,7 +12,7 @@ slit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 import pandas as pnda
 my_fruit_list = pnda.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
-fruits_selected = slit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
+fruits_selected = slit.multiselect("Pick some fruits:", list(my_fruit_list.index), ['Avocado','Strawberries', 'Banana'])
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 slit.dataframe(fruits_to_show)
 
