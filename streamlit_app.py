@@ -21,16 +21,13 @@ slit.header('Fruityvice Fruit Advice!')
 import requests as rqst
 fruityvice_response = rqst.get("https://fruityvice.com/api/fruit/watermelon")
 fruityvice_response2 = rqst.get("https://fruityvice.com/api/fruit/apple")
-slit.text(fruityvice_response.json())
-slit.text(fruityvice_response2.json())
 
-# Take th json version and normalize it
+# Take the json version and normalize it
 fruityvice_normalized = pnda.json_normalize(fruityvice_response.json())
 fruityvice_normalized2 = pnda.json_normalize(fruityvice_response2.json())
 
 # Display in a table
-slit.dataframe(fruityvice_normalized)
-slit.dataframe(fruityvice_normalized2)
+slit.dataframe(fruityvice_normalized, fruityvice_normalized2)
 
 
 
