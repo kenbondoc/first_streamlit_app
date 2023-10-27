@@ -17,9 +17,10 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 slit.dataframe(fruits_to_show)
 
 # New section to display fruityvice api response
+slit.header('Fruityvice Fruit Advice!')
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-slit.text(fruityvice_response)
+slit.text(fruityvice_response.json())
 
 
 
