@@ -26,6 +26,8 @@ fruityvice_response = rqst.get("https://fruityvice.com/api/fruit/" + fruit_choic
 fruityvice_normalized = pnda.json_normalize(fruityvice_response.json())
 slit.dataframe(fruityvice_normalized)
 
+import snowflake.connector
+
 
 
 
