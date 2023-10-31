@@ -26,7 +26,7 @@ slit.dataframe(fruits_to_show)
 def get_fruityvice_data(this_fruit_choice):
     fruityvice_response = rqst.get("https://fruityvice.com/api/fruit/" + fruit_choice)
     fruityvice_normalized = pnda.json_normalize(fruityvice_response.json())
-    return(fruityvice_normalized)
+    return fruityvice_normalized
 
 # New section to display fruityvice api response
 # import requests as rqst
