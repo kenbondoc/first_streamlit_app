@@ -22,6 +22,12 @@ fruits_selected = slit.multiselect("Pick some fruits:", list(my_fruit_list.index
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 slit.dataframe(fruits_to_show)
 
+# create a repeatable code block (called a function)
+def get_fruityvice_data(this_fruit_choice):
+    fruityvice_response = rqst.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+    fruityvice_normalized = pnda.json_normalize(fruityvice_response.json())
+    return(fruityvice_normalized)
+
 # New section to display fruityvice api response
 # import requests as rqst
 slit.header('Fruityvice Fruit Advice!')
@@ -30,9 +36,8 @@ try:
   if not fruit_choice:
     slit.error("Please select a fruit to get information.")
   else:
-    fruityvice_response = rqst.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-    fruityvice_normalized = pnda.json_normalize(fruityvice_response.json())
-    slit.dataframe(fruityvice_normalized)
+    back_from_function = get_fruityvice_data(this_fruit_choice)
+    slit.dataframe(back_from_function)
 except URLError as e:
     streamlit.error()
 
