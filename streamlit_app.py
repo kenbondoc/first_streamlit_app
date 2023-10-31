@@ -26,6 +26,8 @@ fruityvice_response = rqst.get("https://fruityvice.com/api/fruit/" + fruit_choic
 fruityvice_normalized = pnda.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
 
+streamlit.stop()
+
 # Snowflake connector
 import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
